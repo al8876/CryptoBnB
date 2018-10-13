@@ -2,7 +2,7 @@ const Property = artifacts.require("./Property.sol");
 const PropertyToken = artifacts.require("./PropertyToken.sol");
 const PropertyRegistry = artifacts.require("./PropertyRegistry.sol");
 
-contract('Property Registry Contract Tests', function(account) {
+contract('Property Registry - Tests', function(account) {
   
   let property, propertyToken, propertyRegistry;
   const price = 100;
@@ -33,7 +33,6 @@ contract('Property Registry Contract Tests', function(account) {
   });
 
   it('should allow alice, as the owner of the property to register', async () => {
-
     await propertyRegistry.registerProperty(1, price, { from: alice });
     await propertyRegistry.stayData.call(1);
     assert(true, "Alice could not register the property");
@@ -49,5 +48,17 @@ contract('Property Registry Contract Tests', function(account) {
       assert(true, 'Fail: Dale registered the property');
     }
   });
+
+  it('should allow dale to submit a request', async () => {
+    let checkInDate = parseInt((new Date().getTime()/1000)) + 3600;
+    let checkOutDate = checkInDate + 1000;
+    await propertyRegistry.request(1, checkInDate, checkOutDate, { from: dale });
+    const requestData = await propertyRegistry.stayData.call(1);
+    assert(requestData[5] == dale, "Was unable to request a stay at the property");
+  });
+
+  // it('should not allow the request to go through: Check in is after checkout', async () => {
+  //   await propertyRegistry.request
+  // })
 
 });
