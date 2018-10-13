@@ -8,6 +8,7 @@ contract('Property Registry - Tests', function(account) {
   const price = 100;
   const alice = account[0];
   const dale = account[1];
+  const eve = account[2];
   
   it('should deploy the Property contract', async () => {
     property = await Property.deployed();
@@ -57,8 +58,39 @@ contract('Property Registry - Tests', function(account) {
     assert(requestData[5] == dale, "Was unable to request a stay at the property");
   });
 
-  // it('should not allow the request to go through: Check in is after checkout', async () => {
-  //   await propertyRegistry.request
-  // })
+  it('should not allow the request to go through: Check in is after checkout', async () => {
+    let checkInDate = parseInt((new Date().getTime()/1000)) + 3600;
+    let checkOutDate = checkInDate - 1000;
+    try {
+      await propertyRegistry.request(1, checkInDate, checkOutDate, { from: dale });
+      await propertyRegistry.stayData.call(1);
+      assert(false, "Was unable to request a stay at the property");
+    } catch(e) {
+      assert(true, 'Fail: Dale registered the property');
+    }
+  });
+
+  it('should not allow Eve to submit a request', async () => {
+    let checkInDate = parseInt((new Date().getTime()/1000)) + 3600;
+    let checkOutDate = checkInDate + 1000;
+    try {
+      await propertyRegistry.request(1, checkInDate, checkOutDate, { from: eve });
+      await propertyRegistry.stayData.call(1);
+      assert(false, "Was unable to request a stay at the property");
+    } catch(e) {
+      assert(true, 'Fail: Eve registered the property');
+    }
+
+  });
+
+  it('should allow alice to approve Dale\'s request', async () => {
+      await propertyRegistry.approveRequest(1, { from: alice });
+      assert(true, "Alice was unable to approve the request");
+  });
+
+  it('should allow Dale to check in', async () => {
+    await propertyRegistry.checkIn(1, { from: dale });
+    assert(true, "Dale was able to check in");
+  });
 
 });

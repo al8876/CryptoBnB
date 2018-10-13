@@ -45,20 +45,22 @@ contract PropertyRegistry {
         stayData[_tokenId].requester = msg.sender;
     }    
 
-    // // Function to approve requests
-    // function approveRequest(uint256 _tokenId) external onlyOwner(_tokenId) {
-    //     require();
-        
-    // }
+    // Function to approve requests
+    function approveRequest(uint256 _tokenId) external onlyOwner(_tokenId) {
+        stayData[_tokenId].occupant = stayData[_tokenId].requester;
+    }
 
-    // // Function to check in to property
-    // function checkIn(uint256 _tokenId) external {
+    // Function to check in to property
+    function checkIn(uint256 _tokenId) external {
+        require(stayData[_tokenId].occupant == msg.sender, "The occupant does not match the sender");
+        require(stayData[_tokenId].checkIn < now, "Too early, has not reached the check in date");
 
-    // }
+    }
 
-    // // Function to checkout of property
-    // function checkOut(uint256 _tokenId) external {
-
-    // }
+    // Function to checkout of property
+    function checkOut(uint256 _tokenId) external {
+        require(stayData[_tokenId].occupant == msg.sender, "The occupant does not match the sender");
+        require(stayData[_tokenId].checkOut <= now, "Cannot checkout yet");
+    }
 
 }
