@@ -1,0 +1,69 @@
+{
+  "pagination": {},
+  "data": [
+    {
+      "id": 1,
+      "name": "Knowledge Base",
+      "client_name": "Cal Stereo",
+      "tasks": 28,
+      "progress": "72%",
+      "due": "25 Oct. 2018"
+    },
+    {
+      "id": 2,
+      "name": "Client Design",
+      "client_name": "Dream Home",
+      "tasks": 234,
+      "progress": "32%",
+      "due": "14 Aug. 2018"
+    },
+    {
+      "id": 3,
+      "name": "Deployment Scripts",
+      "client_name": "Acuserv",
+      "tasks": 65,
+      "progress": "72%",
+      "due": "11 Jun. 2018"
+    },
+    {
+      "id": 4,
+      "name": "SEO Analysis Tool",
+      "client_name": "Great American Music",
+      "tasks": 345,
+      "progress": "53%",
+      "due": "26 Jan. 2018"
+    },
+    {
+      "id": 5,
+      "name": "Speed Optimization",
+      "client_name": "Strength Gurus",
+      "tasks": 87,
+      "progress": "76%",
+      "due": "20 Feb. 2018"
+    },
+    {
+      "id": 6,
+      "name": "Internal Tools",
+      "client_name": "Stratacard",
+      "tasks": 12,
+      "progress": "83%",
+      "due": "8 Apr. 2018"
+    },
+    {
+      "id": 7,
+      "name": "Site Performance",
+      "client_name": "Enviro Architectural Designs",
+      "tasks": 93,
+      "progress": "19%",
+      "due": "12 May. 2018"
+    },
+    {
+      "id": 8,
+      "name": "Testing",
+      "client_name": "De Pinna",
+      "tasks": 94,
+      "progress": "38%",
+      "due": "25 Oct. 2018"
+    }
+  ]
+}

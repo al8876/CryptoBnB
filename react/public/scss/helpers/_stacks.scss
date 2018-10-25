@@ -1,0 +1,156 @@
+.stacks {
+  display: flex;
+  flex-direction: row;
+  height: calc(100% + 60px);
+  margin: -30px 0 0 0;
+
+  @media (max-width: $media-md) {
+    flex-direction: column;
+    margin: 0;
+  }
+}
+
+.stack-wrapper {
+  border-right: 1px solid rgba($color-black, .08);
+  padding: 0 60px;
+
+  @media (max-width: $media-md) {
+    border: 0;
+    padding: 0;
+  }
+
+  h2 {
+    border-bottom: 1px solid rgba($color-black, .08);
+    font-size: 18px;
+    font-weight: 300;
+    margin: 60px 0 30px 0;
+    padding: 0 0 20px 0;
+
+    @media (max-width: $media-md) {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+  }
+
+  &:first-child {
+    margin-left: -60px;
+    padding-left: 60px;
+
+    @media (max-width: $media-md) {
+      margin: 0;
+      padding: 0;
+    }
+
+  }
+
+  &:last-child {
+    border-right: 0;
+    margin-right: -60px;
+    padding-right: 60px;
+
+    @media (max-width: $media-md) {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.stack-shortcuts {
+  margin: 0 0 30px 0;
+
+  ul {
+    @include susy-clearfix();
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    float: left;
+    margin: 0 10px 10px 0;
+  }
+
+  a {
+    background-color: rgba($color-black, .1);
+    border-radius: 16px;
+    font-size: 12px;
+    display: block;
+    padding: 8px 16px;
+    transition: all .2s ease;
+
+    &:hover {
+      background-color: $color-secondary;
+      color: #fff;
+
+      .secondary & {
+        background-color: $color-secondary;
+      }
+
+      .green & {
+        background-color: $color-green;
+      }
+
+      .red & {
+        background-color: $color-red;
+      }
+    }
+  }
+}
+
+.stack-actions {
+  ul {
+    padding: 0;
+
+    li {
+      display: block;
+
+      a {
+        display: block;
+        padding: 12px 0;
+
+        span, strong {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        span {
+          background-color: $color-primary;
+          border-radius: 50%;
+          height: 38px;
+          margin: 0 15px 0 0;
+          text-align: center;
+          width: 38px;
+
+          .md-icon {
+            color: #fff;
+            margin: 9px 0 0 0;
+          }
+
+          .secondary & {
+            background-color: $color-secondary;
+          }
+
+          .green & {
+            background-color: $color-green;
+          }
+
+          .red & {
+            background-color: $color-red;
+          }
+        }
+
+        strong {
+          color: $color-font;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

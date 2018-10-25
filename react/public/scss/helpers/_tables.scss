@@ -1,0 +1,194 @@
+.table-responsive {
+	overflow-x: auto;
+	width: 100%;
+}
+
+table {
+	margin: 0 0 40px 0;
+	max-width: 100%;
+	width: 100%;
+
+	.min-width {
+		width: 1px;
+		white-space: nowrap;
+	}
+
+	th, td {
+		border-bottom: 1px solid rgba(#000, .04);
+		line-height: 20px;
+		padding: 16px 20px;
+		vertical-align: middle;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+
+	th {
+		font-size: 11px;
+		font-weight: 700;
+		padding-bottom: 12px;
+		padding-top: 12px;
+		text-transform: uppercase;
+		text-align: left;
+	}
+
+	.heading {
+		td {
+			border-top: 1px solid rgba(#000, .04);
+			font-size: 12px;
+			font-weight: 600;
+			position: relative;
+			text-transform: uppercase;
+
+			&:after {
+				background-color: rgba(#000, .04);
+				bottom: 2px;
+				content: '';
+				display: block;
+				height: 1px;
+				left: 0;
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
+
+	td {
+		&.new-lines {
+			white-space: pre-wrap;
+		}
+
+		&.actions {
+			text-align: right;
+			white-space: nowrap;
+
+			.button-group {
+				opacity: 0;
+				transition: all .2s ease;
+			}
+		}
+
+		.title-wrapper {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.title {
+			font-weight: 500;
+		}
+
+		.subtitle {
+			font-size: 13px;
+			opacity: .5;
+		}
+
+		.progress {
+			max-width: 300px;
+		}
+
+		.status {
+			border: 2px solid rgba($color-black, .06);
+			border-radius: 50%;
+			box-sizing: border-box;
+			cursor: pointer;
+			display: inline-block;
+			height: 32px;
+			overflow: hidden;
+			margin: 0 20px 0 0;
+			text-align: center;
+			vertical-align: middle;
+			width: 32px;
+
+			i {
+				color: rgba($color-black, .3);
+				font-size: 16px;
+				height: 16px;
+				margin-top: 40px;
+				transition: all .2s ease;
+				width: 16px;
+			}
+
+			&:hover {
+				i {
+					margin: 6px 0 0 0;
+				}
+			}
+
+			&.overdue {
+				border-color: $color-red;
+			}
+
+			&.overdue, &.upcoming {
+				&:hover {
+					border-color: $color-green;
+					i {
+						color: $color-green;
+					}
+				}
+			}
+
+			&.completed {
+				background-color: $color-green;
+				border-color: $color-green;
+
+				i {
+					color: #fff;
+					margin: 6px 0 0 0;
+				}
+			}
+
+			&.in-progress {
+				border-color: $color-orange;
+			}
+		}
+
+		.key-value {
+			span, strong {
+				display: block;
+			}
+
+			span {
+				color: rgba($color-font, .5);
+				font-size: 13px;
+				margin: 0 0 3px 0;
+			}
+
+			strong {
+				font-weight: 400;
+			}
+		}
+
+		.avatar {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			border-radius: 50%;
+			display: inline-block;
+			height: 44px;
+			margin: 0 20px 0 0;
+			vertical-align: middle;
+			width: 44px;
+		}
+	}
+
+	tr {
+		&:hover {
+			.actions {
+				.button-group {
+					opacity: 1;
+				}
+			}
+		}
+
+		&:last-child {
+			td {
+				border-bottom: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+.progress {
+	background-color: rgba(#000, .06);
+	box-sizing: border-box;
+	height: 14px;
+	padding: 4px;
+	// max-width: 320px;
+	min-width: 170px;
+}
+
+.progress-inner {
+	background-color: $color-primary;
+	background-image: linear-gradient(to right, darken($color-cool-grey, 5%), lighten($color-cool-grey, 5%));
+	height: 6px;
+}
+
+.progress-description {
+	display: block;
+	font-style: italic;
+	font-size: 12px;
+	margin: 5px 0 0 0;
+	opacity: .8;
+
+	.md-icon {
+		color: rgba(#000, .2);
+		font-size: 12px;
+		height: 12px;
+		margin: 0 0 0 6px;
+		vertical-align: -2px;
+		width: 12px;
+	}
+}
+.progress-content {
+	display: flex;
+	flex-direction: column;
+}
+.progress-status {
+	background-color: darken($color-cool-grey, 5%);
+	color: #fff;
+	float: left;
+	font-size: 12px;
+	font-weight: 700;
+	height: 32px;
+	line-height: 32px;
+	margin: 0 12px 0 0;
+	text-align: center;
+	width: 40px;
+}
+
+.progress-grid {
+	@include susy-clearfix();
+
+	margin-bottom: -30px;
+
+	> div {
+		margin-bottom: 30px;
+
+		@media (min-width: $media-md) and (max-width: $media-md) {
+			@include span(3 of 6);
+
+			&:nth-child(2n) {
+				@include last();
+			}
+		}
+
+		@media (min-width: $media-md) {
+			@include span(2 of 6);
+
+			&:nth-child(3n) {
+				@include last();
+			}
+		}
+	}
+}

@@ -1,0 +1,92 @@
+.stats-wrapper {
+	@include susy-clearfix();
+}
+
+.stat-item {
+	border-right: 1px solid rgba(#000, .06);
+	box-sizing: border-box;
+	padding: 45px 0;
+	position: relative;
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	@media (max-width: $media-xs) {
+		border: 0;
+		margin: 0 0 30px 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@media (min-width: $media-xs) and (max-width: $media-md) {
+		@include span(3 of 6);
+
+		margin-bottom: 30px;
+
+		&:nth-child(2n) {
+			@include last();
+			border-right: 0;
+		}
+
+		&:nth-last-child(1), &:nth-last-child(2)  {
+			margin-bottom: 0;
+		}
+	}
+
+	@media (max-width: $media-md) {
+		margin: 0;
+		padding: 30px 0;
+	}
+
+	@media (min-width: $media-md) {
+		@include span(3 of 12);
+
+		&:last-child {
+			@include last();
+			border-right: 0;
+		}
+	}
+}
+
+.stat-item-title {
+	margin: 10px 0 5px 0;
+}
+
+.stat-item-value {
+	font-size: 30px;
+}
+
+.stat-item-subtitle {
+	opacity: .5;
+	transition: all .2 ease;
+}
+
+.stat-item-label {
+	background-color: rgba(#000, .06);
+	color: rgba($color-black, .8);
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+	margin-top: -12px;
+	padding: 6px 8px;
+	position: absolute;
+	right: 15px;
+	top: 50%;
+
+	&.raising {
+		background-color: $color-green;
+		color: #fff;
+	}
+
+	&.descreasing {
+		background-color: $color-red;
+		color: #fff;
+	}
+
+	@media (max-width: $media-xs) {
+		right: 0;
+	}
+}

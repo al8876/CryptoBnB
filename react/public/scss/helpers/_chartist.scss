@@ -1,0 +1,50 @@
+.ct-chart {
+	background-color: rgba(#000, .02);
+	height: 340px;
+	padding: 30px 0 10px 0;
+}
+
+.ct-bar {
+	@media (min-width: $media-md) and (max-width: $media-lg) {
+		stroke-width: 14px;
+	}
+
+	@media (min-width: $media-lg) {
+		stroke-width: 22px;
+	}
+}
+
+.ct-grid {
+	stroke: rgba(#000, .1);
+}
+
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+	cursor: pointer;
+	stroke: rgba($color-green, .8);
+	transition: stroke .2s ease;
+
+	&:hover {
+		stroke: rgba($color-green, 1);
+	}
+}
+
+.ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point, .ct-series-b .ct-slice-donut {
+	cursor: pointer;
+	stroke: rgba($color-red, .8);
+	transition: stroke .2s ease;
+
+	&:hover {
+		stroke: rgba($color-red, 1);
+	}
+}
+
+.ct-label.ct-vertical.ct-start {
+	color: $color-font;
+}
+
+.ct-chart-bar .ct-label.ct-horizontal.ct-end {
+	color: $color-font;
+	font-size: 11px;
+	font-weight: 400;
+	text-transform: uppercase;
+}

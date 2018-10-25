@@ -1,0 +1,57 @@
+.footer {
+	@include susy-clearfix();
+
+	border-top: 1px solid rgba(#000, .06);
+	font-size: 13px;
+	margin: 0;
+	padding: 30px 60px;
+
+	@media (max-width: $media-md) {
+		padding: 30px;
+	}
+
+	ul {
+		@include susy-clearfix();
+
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		@media (max-width: $media-md) {
+			border-top: 1px solid rgba(#000, .06);
+			margin-top: 20px;
+		}
+
+		li {
+			float: left;
+			margin: 0 0 0 25px;
+
+			a {
+				display: block;
+			}
+
+			@media (max-width: $media-md) {
+				float: none;
+				margin: 20px 0;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+.footer-left {
+	line-height: 1.5;
+
+	@media (min-width: $media-md) {
+		float: left;
+	}
+}
+
+.footer-right {
+	@media (min-width: $media-md) {
+		float: right;
+	}
+}

@@ -1,0 +1,30 @@
+.shortcuts {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.shortcut-item {
+  cursor: pointer;
+  display: block;
+  margin: 0 20px;
+  padding: 0;
+  text-align: center;
+
+  .has-page-header & {
+    color: #fff;
+  }
+
+  span {
+    display: block;
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

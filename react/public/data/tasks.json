@@ -1,0 +1,109 @@
+{
+    "pagination": {},
+    "data": [
+        {
+            "header": {
+                "title": "Upcoming",
+                "type": "upcoming"
+            },
+            "data": [
+                {
+                    "id": 1,
+                    "type": "upcoming",
+                    "title": "Fix header responsive issues",
+                    "project_title": "CRM & Projects Solution",
+                    "user_avatar": "/img/tmp/user-1.jpg",
+                    "user_name": "Robert Kidney",
+                    "issued": "Sept. 11, 2017",
+                    "due": "Sept. 28, 2017"
+                },
+                {
+                    "id": 2,
+                    "type": "upcoming",
+                    "title": "Development of new payment gateway",
+                    "project_title": "Internal Tools",
+                    "user_avatar": "/img/tmp/user-2.jpg",
+                    "user_name": "David H. Cherry",
+                    "issued": "Sept. 7, 2017",
+                    "due": "Sept. 28, 2017"
+                },
+                {
+                    "id": 3,
+                    "type": "upcoming",
+                    "title": "Adding FAQ section",
+                    "project_title": "Knowledge Base",
+                    "user_avatar": "/img/tmp/user-3.jpg",
+                    "user_name": "Nathanael J. Barrett",
+                    "issued": "Oct. 23, 2017",
+                    "due": "Oct. 28, 2017"
+                },
+                {
+                    "id": 4,
+                    "type": "upcoming",
+                    "title": "Updating server settings",
+                    "project_title": "Deployment Script",
+                    "user_avatar": "/img/tmp/user-4.jpg",
+                    "user_name": "Russell S. Davila",
+                    "issued": "Sept. 16, 2017",
+                    "due": "Sept. 28, 2017"
+                }
+            ]
+        },
+        {
+            "header": {
+                "title": "Overdue",
+                "type": "overdue"
+            },
+            "data": [
+                {
+                    "id": 5,
+                    "type": "overdue",
+                    "title": "Adding DNS records for new website",
+                    "project_title": "WordPress Theme",
+                    "user_avatar": "/img/tmp/user-2.jpg",
+                    "user_name": "Melinda Sibley",
+                    "issued": "Sept. 16, 2017",
+                    "due": "Sept. 28, 2017"
+                },
+                {
+                    "id": 6,
+                    "type": "overdue",
+                    "title": "Write proper API documentation",
+                    "project_title": "Knowledge Base",
+                    "user_avatar": "/img/tmp/user-3.jpg",
+                    "user_name": "Kathryn James",
+                    "issued": "Sept. 16, 2017",
+                    "due": "Sept. 28, 2017"
+                }
+            ]
+        },
+       {
+            "header": {
+                "title": "Completed",
+                "type": "completed"
+            },
+            "data": [
+                {
+                    "id": 7,
+                    "type": "completed",
+                    "title": "Prepare UI styleguide",
+                    "project_title": "Internal Tools",
+                    "user_avatar": "/img/tmp/user-4.jpg",
+                    "user_name": "James Tiner",
+                    "issued": "Sept. 16, 2017",
+                    "due": "Sept. 28, 2017"
+                },
+                {
+                    "id": 8,
+                    "type": "completed",
+                    "title": "Add new features based on feedback",
+                    "project_title": "Support System",
+                    "user_avatar": "/img/tmp/user-5.jpg",
+                    "user_name": "Robert L. Kidney",
+                    "issued": "Sept. 16, 2017",
+                    "due": "Sept. 28, 2017"
+                }
+            ]
+        }
+    ]
+}

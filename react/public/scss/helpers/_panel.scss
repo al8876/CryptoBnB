@@ -1,0 +1,164 @@
+.panel {
+	border-right: 1px solid rgba(#000, .06);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	float: left;
+	min-height: 100%;
+	padding: 30px;
+
+	@media (max-width: $media-xs) {
+		border-bottom: 1px solid rgba(#000, .06);
+		border-right: 0;
+	}
+}
+
+.panel-user {
+	@include susy-clearfix();
+
+	border-bottom: 1px solid rgba(#000, .06);
+	margin: -5px 0 37px 0;
+	padding: 0 0 22px 0;
+	position: relative;
+
+	@media (max-width: $media-xs) {
+		margin-top: 0;
+	}
+}
+
+.panel-user-avatar {
+	background-color: rgba(#000, .04);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 50%;
+	display: inline-block;
+	height: 42px;
+	margin: 0 12px 0 0;
+	vertical-align: middle;
+	width: 42px;
+}
+
+.panel-user-action {
+	cursor: pointer;
+	margin-top: -18px;
+	opacity: .2;
+	position: absolute;
+	right: 3px;
+	top: 50%;
+
+	&:hover {
+		opacity: 1;
+		transition: all .2s ease;
+	}
+}
+
+.panel-user-content {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.panel-user-name {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.panel-user-subtitle {
+	font-size: 13px;
+	margin: 3px 0 0 0;
+	opacity: .6;
+}
+
+.panel-list {
+	flex-grow: 1;
+
+	ul {
+		list-style: none;
+		margin: 0 0 30px 0;
+		padding: 0;
+	}
+
+	li {
+		line-height: 22px;
+		margin: 0 0 15px 0;
+		padding: 0 0 0 12px;
+		position: relative;
+
+		a {
+			text-decoration: underline;
+		}
+
+		&:before {
+			background-color: rgba($color-black, .2);
+			border-radius: 50%;
+			content: '';
+			display: inline-block;
+			height: 3px;
+			left: 0;
+			position: absolute;
+			top: 10px;
+			width: 3px;
+		}
+	}
+}
+
+.panel-list-title {
+	font-size: 11px;
+	font-weight: 700;
+	margin: 0 0 15px 0;
+	padding: 0 0 10px 0;
+	text-transform: uppercase;
+}
+
+.panel-actions {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap-reverse;
+	justify-content: flex-end;
+	margin: 0 -30px -30px -30px;
+}
+
+.panel-action {
+	border-left: 1px solid rgba(#000, .06);
+	border-top: 1px solid rgba(#000, .06);
+	box-sizing: border-box;
+	cursor: pointer;
+	text-align: center;
+	transition: all .2s ease;
+
+	@media (min-width: $media-lg) {
+		width: 33.3333%;
+	}
+
+	@media (max-width: $media-lg) {
+		width: 50%;
+
+		&:nth-child(2n) {
+			border-right: 0;
+		}
+	}
+
+	strong {
+		display: block;
+		white-space: nowrap;
+	}
+
+	i {
+		margin: 0 0 10px 0;
+	}
+
+	strong {
+		font-weight: 400;
+	}
+
+	&:hover {
+		.panel-action-inner {
+			color: $color-primary;
+		}
+	}
+}
+
+.panel-action-inner {
+	display: block;
+	padding: 30px;
+}

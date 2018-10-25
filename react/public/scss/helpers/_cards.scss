@@ -1,0 +1,83 @@
+.cards-wrapper {
+	.card {
+		@media (min-width: $media-md) {
+			@include span(3 of 12);
+
+			&:nth-child(4n) {
+				@include last();
+			}
+		}
+
+		box-sizing: border-box;
+	}
+}
+
+.card {
+	background-position: center center;
+	background-repeat: no-repeat;;
+	background-size: cover;
+	border: 1px solid rgba(#000, .06);
+	margin: 0 0 30px 0;
+	padding: 20px;
+	position: relative;
+}
+
+.card-close {
+	cursor: pointer;
+	opacity: .8;
+	position: absolute;
+	right: 12px;
+	top: 12px;
+
+	.has-image & {
+		color: #fff;
+	}
+}
+
+.card-date {
+	font-size: 12px;
+	margin: 0 0 7px 0;
+	opacity: .5;
+}
+
+.card-content {
+	border-top: 1px solid rgba(#000, .06);
+	margin: 0 -20px;
+	padding: 20px 20px 0 20px;
+}
+
+.card-title {
+	display: block;
+	font-size: 16px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.card-subtitle {
+	display: block;
+	margin: 6px 0 0 0;
+	overflow: hidden;
+	opacity: .8;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.card-filetype {
+	color: $color-red;
+	margin: 13px 0 33px 0;
+
+	.md-icon {
+		font-size: 80px;
+		height: 80px;
+		width: 80px;
+	}
+}
+
+.card-image {
+	background-position: center center;
+	background-size: cover;
+	height: 150px;
+	margin: -21px -21px 0 -21px;
+}

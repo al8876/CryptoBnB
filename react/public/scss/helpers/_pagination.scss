@@ -1,0 +1,43 @@
+.pagination {
+	margin: 40px 0;
+	padding: 0;
+	text-align: center;
+
+	li {
+		background-color: rgba(#000, .04);
+		cursor: pointer;
+		display: inline-block;
+		height: 40px;
+		line-height: 40px;
+		margin: 0 5px;
+		transition: all .2s ease;
+
+		a {
+			display: block;
+			height: 40px;
+			line-height: 40px;
+			padding: 0 16px;
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		&.break {
+			padding: 0 16px;
+		}
+
+		&.disabled {
+			cursor: normal !important;
+			opacity: .5;
+		}
+
+		&.selected {
+			background-color: $color-secondary;
+
+			a {
+				color: #fff;
+			}
+		}
+	}
+}
