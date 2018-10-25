@@ -5,9 +5,9 @@ const PropertyRegistry = artifacts.require("./PropertyRegistry.sol");
 
 module.exports = function(deployer) {
   deployer.deploy(Migrations);
-  deployer.deploy(Property, 'Property', 'PTK').then(() =>
-    // deployer.deploy(PropertyToken, 'PropertyToken', 'PT', 0).then(() =>
-      deployer.deploy(PropertyRegistry, Property.address)
-    );
-  // );
+  deployer.deploy(Property, 'Property', 'PROP').then(() =>
+    deployer.deploy(PropertyToken, 'PropertyToken', 'PTK', 0).then(() =>
+      deployer.deploy(PropertyRegistry, Property.address, PropertyToken.address)
+    )
+  );
 };

@@ -11,10 +11,10 @@ contract('Property - Tests:', function(account) {
     assert(property !== undefined, 'Property was not deployed');
   });
   
-  it('should have contract name "Property" and symbol "PTK"', async () => {
+  it('should have contract name "Property" and symbol "PROP"', async () => {
     const name = await property.name.call();
     const symbol = await property.symbol.call();
-    assert(name === 'Property' && symbol === 'PTK', 'Name and Symbol are incorrect');
+    assert(name === 'Property' && symbol === 'PROP', 'Name and Symbol are incorrect');
   });
   
   it('should allow alice to create property with tokenId 1', async () => {
